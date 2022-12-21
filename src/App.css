@@ -1,3 +1,11 @@
+@font-face {
+   font-family: vox;
+   src: url(/src/Vox/Vox\ Regular.ttf);
+ }
+
 .App {
+   background: center fixed linear-gradient(rgba(4,26,22,0.7),rgba(4,26,22,0.6)),
+   url(/src/img/bg.jpg);
    text-align: center;
+   font-family: vox;
 }
