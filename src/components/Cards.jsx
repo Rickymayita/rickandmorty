@@ -3,19 +3,19 @@ import styles from './Cards.module.css'
 
 
 export default function Cards(props) {
-   const { characters } = props;
-   return <div className={styles.cards}>
+   const { character } = props;
+   return (<div className={styles.cards}>
       {
-         characters.map(({name,species,gender,image}, index)=>{
+         
+         character.map((card) => {
             return <Card
-               key={index}
-               name={name}
-               species={species}
-               gender={gender}
-               image={image}
-               onClose={() => window.alert('Emulamos que se cierra la card')}
+               name={card.name}
+               species={card.species}
+               gender={card.gender}
+               image={card.image}
+               onClose={()=>props.onClose(card.id)}
             />
          })
       }
-   </div>;
+   </div>)
 }

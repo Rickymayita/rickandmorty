@@ -2,10 +2,15 @@
    font-family: vox;
    src: url(/src/Vox/Vox\ Regular.ttf);
  }
-
+*{
+   margin: 0;
+   padding: 0;
+}
 .App {
    background: center fixed linear-gradient(rgba(4,26,22,0.7),rgba(4,26,22,0.6)),
-   url(/src/img/bg.jpg);
+   url(/src/img/bg.jpg) no-repeat ;
    text-align: center;
    font-family: vox;
+   background-size:  cover;
+   height: 100vh;
 }
