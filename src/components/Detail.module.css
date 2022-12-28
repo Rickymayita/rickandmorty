@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.idCard{
+    width: 80%;
+    background-color: #091a04;
+    color: #5fe03f;
+    border-radius: 20px;
+    margin: 30px;
+    padding: 10px;
+}
+
+.name{
+    margin: 10px;
+    border: solid #5fe03f;
+}
+.bodyId{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 15px;
+    border: solid #5fe03f;
+}
+.imgId img{
+    margin: 30px;
+    border: solid #5fe03f;
+    border-radius: 15px;
+}
+
+.infId{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+h2{
+    margin-bottom: 30px;
+}
+
+.footerId{
+    margin: 10px;
+    border: solid #5fe03f;
+}

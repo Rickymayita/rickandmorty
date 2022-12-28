@@ -2,6 +2,9 @@ import React from 'react';
 import './App.css'
 import Cards from './components/Cards.jsx'
 import NavBar from './components/NavBar.jsx'
+import About from './components/About.jsx';
+import Detail from './components/Detail.jsx';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [character, setCharacters] = React.useState([]);
@@ -14,7 +17,7 @@ function App() {
           let existe = character.find((element) => element.id === data.id)
           if (existe) {
             alert('personaje ya elegido')
-          }else{
+          } else {
             setCharacters((oldChars) => [...oldChars, data]);
           }
 
@@ -31,19 +34,17 @@ function App() {
 
   return (
     <div className='App' >
+
       <div>
         <NavBar
           onSearch={onSearch}
         />
       </div>
-
-      <div>
-        <Cards
-          character={character}
-          onClose={onClose}
-        />
-      </div>
-
+      <Routes>
+          <Route  path='/home' element= {<Cards character={character} onClose={onClose} />}></Route>
+          <Route exact path='/detail/:detailId' element={<Detail />}></Route>
+          <Route exact path='/about' element={<About />}></Route>
+      </Routes>
     </div>
   )
 }

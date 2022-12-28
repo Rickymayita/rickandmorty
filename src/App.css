@@ -6,11 +6,12 @@
    margin: 0;
    padding: 0;
 }
-.App {
+body {
+   width: 100%;
    background: center fixed linear-gradient(rgba(4,26,22,0.7),rgba(4,26,22,0.6)),
-   url(/src/img/bg.jpg) no-repeat ;
+   url(/src/img/bg.jpg) repeat;
    text-align: center;
    font-family: vox;
-   background-size:  cover;
+   background-size: cover;
    height: 100vh;
 }
