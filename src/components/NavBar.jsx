@@ -8,13 +8,13 @@ const NavBar = (props) => {
     return (
         <div className={styles.nav}>
             <div className='styles.logo'>
-                <Link to = '/home'><img className={styles.imgnav} src={head} alt="" /></Link>                
+                <Link to='/home'><img className={styles.imgnav} src={head} alt="" /></Link>
             </div>
 
             <div className='styles.enlaces'>
-                    <Link to = '/home'><span>Home</span></Link>
-                    <Link to = '/about'><span>About</span></Link>
-                
+                <Link to='/home'><span>Home</span></Link>
+                <Link to='/about'><span>About</span></Link>
+
             </div>
 
             <div className='styles.search'>
@@ -22,6 +22,11 @@ const NavBar = (props) => {
                     onSearch={props.onSearch}
                 />
             </div>
+
+            <div className='styles.btn'>
+                <Link to='/'><button onClick={props.logout}>Log Out</button></Link>
+            </div>
+
         </div>
     )
 }

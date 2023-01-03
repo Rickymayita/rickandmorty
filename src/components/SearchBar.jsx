@@ -5,7 +5,7 @@ export default function SearchBar(props) {
    const [character, setCharter] = React.useState('')
 
    const handleInput = (event) => {
-      setCharter(event.target.value)
+      setCharter(event.target.value)    
    }
 
    return (

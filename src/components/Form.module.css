@@ -1,0 +1,114 @@
+/* .formBody{
+    width: 50vh;
+    height: 50vh;
+    background: #091a04;
+    color: #5fe03f;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 500px;
+    margin-top: 100px;
+}
+
+.inputs{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+} */
+
+
+.formBody{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: #091a04;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.formBody .inputs{
+    position: relative;
+}
+
+.formBody .inputs input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #5fe03f;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #5fe03f;
+    outline: none;
+    background: transparent;
+}
+
+.formBody .inputs label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #5fe03f;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.formBody .inputs input:focus ~ label,
+.formBody .inputs input:valid ~ label{
+    top: -20px;
+    left: 0;
+    color: #5fe03f;
+    font-size: 12px;
+    background: transparent;
+}
+
+.btn {
+    background: transparent;
+    border: 2px solid #5fe03f;
+    color: #5fe03f;
+    text-transform: uppercase;
+    font-family: vox;
+    font-size: 18px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    padding: 4px 20px;
+    position: relative;
+    transition: 0.5s ease-in-out;
+    margin: 7px;
+    border-radius: 5px;    
+}
+
+.btn::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #5fe03f;
+    z-index: -1;
+    clip-path: circle(0% at 50% 50%);
+    transition: 0.5s ease-in-out;
+}
+
+.btn:hover {
+    background: #5fe03f;
+    color: #000;
+}
+
+.btn:hover::before{
+    clip-path: circle(100% at 50% 50%);
+}
+.danger{
+    color: #e03f3f;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.warning{
+    color: #fff;
+    font-size: 50px;
+}

@@ -33,7 +33,7 @@
 
 .btn:hover {
     background: #5fe03f;
-    color: #091a04;
+    color: #000;
 }
 
 .btn:hover::before{
@@ -71,5 +71,5 @@
     left: 15px;
     font-size: 12px;
     padding: 0 2px;
-    background: #091a04;
+    background: #000;
   }
