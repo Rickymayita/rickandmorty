@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Profiler } from 'react';
 import './App.css'
 import Cards from './components/Cards.jsx'
 import NavBar from './components/NavBar.jsx'
 import About from './components/About.jsx';
 import Detail from './components/Detail.jsx';
 import Form from './components/Form.jsx';
+import Porfolio from './components/Porfolio';
+import Favorites from './components/Favorites';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 
 
@@ -71,6 +73,8 @@ function App() {
         <Route path='/home' element={<Cards character={character} onClose={onClose} />}></Route>
         <Route exact path='/detail/:detailId' element={<Detail />}></Route>
         <Route exact path='/about' element={<About />}></Route>
+        <Route exact path='/porfolio' element={<Porfolio />}></Route>
+        <Route exact path='/favorites' element={<Favorites character={character} onClose={onClose} />}></Route>
       </Routes>
     </div>
   )

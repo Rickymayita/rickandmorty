@@ -8,21 +8,20 @@ export default function Cards(props) {
    const { character } = props;
    return (
       <div>
-      <div className={styles.cards}>
-         {
-
-            character.map((card) => {
-               return <Card
-                  id={card.id}
-                  name={card.name}
-                  species={card.species}
-                  gender={card.gender}
-                  image={card.image}
-                  onClose={() => props.onClose(card.id)}
-               />
-            })
-         }
+         <div className={styles.cards}>
+            {
+               character.map((card) => {
+                  return <Card
+                     id={card.id}
+                     name={card.name}
+                     species={card.species}
+                     gender={card.gender}
+                     image={card.image}
+                     onClose={() => props.onClose(card.id)}
+                  />
+               })
+            }
+         </div>
       </div>
-      </div>
-      )
+   )
 }
