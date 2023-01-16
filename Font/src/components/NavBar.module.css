@@ -30,7 +30,7 @@ a:link, a:visited, a:active {
 }
 
  button {
-    background: transparent;
+    background: #000;
     border: 2px solid #5fe03f;
     color: #5fe03f;
     text-transform: uppercase;

@@ -11,15 +11,18 @@ export default function rootReducer(state = inicialState, { type, payload }) {
         case ADD_FAVORITES:
             return {
                 ...state,
-                myFavorites: [...state.myFavorites, payload]
+                myFavorites: [...state.myFavoritesOrigin, payload],
+                myFavoritesOrigin: [...state.myFavoritesOrigin, payload]
             }
         case DELETE_FAVORITES:
+            const filtered = state.myFavorites.filter((ch) => {
+                    return ch.id !== payload})
             return {
                 ...state,
-                myFavorites: state.filter((ch) => {
-                    return ch.id !== payload
-                })
-            }
+                myFavorites: filtered,
+                myFavoritesOrigin: filtered,
+                }
+            
         case FILTER:
             const filterCopy = [...state.myFavoritesOrigin];
             const filter = filterCopy.filter((ch) => ch.gender === payload);
@@ -29,7 +32,6 @@ export default function rootReducer(state = inicialState, { type, payload }) {
             };
         case ORDER:
             const orderCopy = [...state.myFavoritesOrigin];
-            // console.log("payload", payload);
             const order = orderCopy.sort((a, b) => {
                 if (a.id > b.id) {
                     return "Ascendente" === payload ? 1 : -1;

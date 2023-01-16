@@ -12,6 +12,7 @@ export default function Cards(props) {
             {
                character.map((card) => {
                   return <Card
+                     key={card.id}
                      id={card.id}
                      name={card.name}
                      species={card.species}
