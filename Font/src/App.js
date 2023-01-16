@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Profiler } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css'
 import Cards from './components/Cards.jsx'
 import NavBar from './components/NavBar.jsx'
@@ -40,7 +40,7 @@ function App() {
   const [character, setCharacters] = React.useState([]);
 
   const onSearch = (id) => {
-    fetch(`http://localhost:3001/rickandmorty/character/${id}`)//fetch(`https://rickandmortyapi.com/api/character/${id}`)
+    fetch (`http://localhost:3001/onsearch/${id}`) //(`http://localhost:3001/rickandmorty/character/${id}`)//fetch(`https://rickandmortyapi.com/api/character/${id}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.name) {

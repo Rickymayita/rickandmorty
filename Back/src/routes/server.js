@@ -1,8 +1,28 @@
 const http = require('http');
+const getCharById = require('../controllers/getCharById')
+const  getCharDetail  = require('../controllers/getCharDetail')
 const PORT = 3001
-const characters = require('../utils/data')
+//const PORT = 3001
+//const characters = require('../utils/data')
 
 http.createServer(function (req, res) {
+    const allUrl = req.url.split('/') //paso a arry la url separando cada elemento entre'/'
+    const id = Number(allUrl.pop()) // obtengo el último dato del array
+    const url = allUrl.join('/')
+    switch (url) {
+        case '/onsearch':
+            getCharById(res, id)
+            break;
+        case '/detail':
+            getCharDetail(res, id)
+            break;
+        default:
+            res.writeHead(400, { 'Content-Type': 'text/plain' })
+            res.end('Route not found')
+    }
+}).listen(PORT, "localhost") 
+
+/* http.createServer(function (req, res) {
     const { url } = req
     const allUrl = url.split('/') //paso a arry la url separando cada elemento entre'/'
     const id = Number(allUrl.pop()) // obtengo el último dato del array
@@ -31,4 +51,5 @@ http.createServer(function (req, res) {
     }
 }).listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
-})
+}) */
+
