@@ -25,14 +25,14 @@ export default function Detail(props) {
     return (
         <div>
             <div className={styles.idCard} >
-                <div className={styles.name}><h1>Nombre: {character.name}</h1></div>
+                <div className={styles.name}><h1>Name: {character.name}</h1></div>
                 <div className={styles.bodyId}>
                     <div className={styles.imgId}><img src={character.image} alt="" /></div>
                     <div className={styles.infId}>
                         <h2>Status: {character.status}</h2>
-                        <h2>Especie: {character.species}</h2>
-                        <h2>Genero: {character.gender}</h2>
-                        <h2>Origen: {character.origin?.name}</h2>
+                        <h2>Species: {character.species}</h2>
+                        <h2>Gender: {character.gender}</h2>
+                        <h2>Origin: {character.origin?.name}</h2>
                     </div>
                 </div>
                 <div className={styles.footerId}><h1>IDENTIFICATION CARD</h1></div>

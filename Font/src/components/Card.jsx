@@ -32,7 +32,7 @@ export default function Card(props) {
          <div className={styles.btns}>
             <div className={styles.btnh}>
                {isFav ? (
-                  <button onClick={() => handleFavorite(props)}>❤️</button>
+                  <button onClick={() => handleFavorite(props)}>💚</button>
                ) : (
                   <button onClick={() => handleFavorite(props)}>🤍</button>
                )}

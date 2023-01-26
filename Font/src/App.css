@@ -6,7 +6,7 @@
    margin: 0;
    padding: 0;
 }
-body {
+/*body {
    width: 100%;
    background: center fixed linear-gradient(rgba(4,26,22,0.7),rgba(4,26,22,0.6)),
    url(/src/img/bg.jpg) repeat;
@@ -14,4 +14,4 @@ body {
    font-family: vox;
    background-size: cover;
    height: 100vh;
-}
+} */

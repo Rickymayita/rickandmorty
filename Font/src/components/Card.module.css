@@ -8,6 +8,7 @@
 .btnh button{
     width: 55px;
     padding: 5px 14px;
+    background: #091a04;
 }
 .btnx{
     width: 100%;
@@ -24,6 +25,7 @@
     background: #5fe03f;
     color: #091a04;
 }
+
 .bgcard{
     background:center url(/src/img/bgcard.png) no-repeat;
     padding: 30px 0 30px 0;
