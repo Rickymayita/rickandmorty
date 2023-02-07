@@ -40,7 +40,7 @@ function App() {
   const [character, setCharacters] = React.useState([]);
 
   const onSearch = (id) => {
-    fetch (`http://localhost:3001/onsearch/${id}`) //(`http://localhost:3001/rickandmorty/character/${id}`)//fetch(`https://rickandmortyapi.com/api/character/${id}`)
+    fetch (`http://localhost:3001/rickandmorty/character/${id}`) //(`http://localhost:3001/rickandmorty/character/${id}`)//fetch(`https://rickandmortyapi.com/api/character/${id}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.name) {

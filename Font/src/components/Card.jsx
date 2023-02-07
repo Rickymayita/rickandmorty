@@ -12,6 +12,7 @@ export default function Card(props) {
    function handleFavorite(ch) {
       if (isFav) {
          setIsFav(false);
+            console.log(ch.id)
          dispatch(deleteFavorites(ch.id));
       } else {
          setIsFav(true);
