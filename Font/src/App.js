@@ -8,6 +8,7 @@ import Form from './components/Form.jsx';
 import Porfolio from './components/Porfolio';
 import Favorites from './components/Favorites';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 
@@ -39,22 +40,25 @@ function App() {
   const location = useLocation();
   const [character, setCharacters] = React.useState([]);
 
-  const onSearch = (id) => {
-    fetch (`http://localhost:3001/rickandmorty/character/${id}`) //(`http://localhost:3001/rickandmorty/character/${id}`)//fetch(`https://rickandmortyapi.com/api/character/${id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.name) {
-          let existe = character.find((element) => element.id === data.id)
-          if (existe) {
-            alert('personaje ya elegido')
-          } else {
-            setCharacters((oldChars) => [...oldChars, data]);
-          }
-
+  async function onSearch(id) {
+    try {
+      const result = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
+      const char = result.data
+      if (char.name) {
+        let existe = character.find((element) => element.id === char.id)
+        if (existe) {
+          alert('personaje ya elegido')
         } else {
-          window.alert('No hay personajes con ese ID');
+          setCharacters((oldChars) => [...oldChars, char]);
         }
-      });
+
+      } else {
+        window.alert('No hay personajes con ese ID');
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
   }
   const onClose = (id) => {
     setCharacters((dato) => {
