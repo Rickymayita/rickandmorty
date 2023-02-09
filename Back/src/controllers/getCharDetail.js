@@ -14,7 +14,7 @@ const getDetail = async function (req, res) {
                 status: characterDetail.status,
                 origin: characterDetail.origin,
             }
-            res.status(200).end(JSON.stringify(char))
+            res.status(200).json(char)
     } catch (error) {
         res.status(500).end('Not found Characters', error)
     }

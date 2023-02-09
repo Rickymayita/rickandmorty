@@ -12,7 +12,7 @@ const getCharById = async function (req, res) {
             species: characterApi.species,
             id: characterApi.id,
         }
-        res.status(200).end(JSON.stringify(char))
+        res.status(200).json(char)
     } catch (error) {
         res.status(500).end('Not found Characters', error)
     }
