@@ -17,12 +17,7 @@ const getDetail = async function (req, res) {
             res.status(200).json(char)
     } catch (error) {
         res.status(500).end('Not found Characters', error)
-    }
-    
-        
-        
-            
-       
+    }  
 }
 
 module.exports = getDetail

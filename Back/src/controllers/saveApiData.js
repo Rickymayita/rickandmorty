@@ -1,4 +1,6 @@
 const axios = require('axios')
+const { character } = require('../models/Character');
+
 
 const getApiData = async function (req, res) {
     try {
@@ -23,3 +25,17 @@ const getApiData = async function (req, res) {
     }
 }
 
+async function saveApiData() {
+    const characters = await getApiData();
+    characters.forEach(async (characterData) => {
+      const [character, created] = await character.findOrCreate({
+        where: { id: characterData.id },
+        defaults: characterData,
+      });
+      if (!created) {
+        await character.update(characterData);
+      }
+    });
+  }
+  
+  module.exports = { saveApiData };
